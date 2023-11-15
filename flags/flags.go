@@ -17,6 +17,7 @@ var parserCommand = &cobra.Command{
 	`,
 }
 
+// ReadConfig reads given flags
 func ReadConfig() {
 	parserCommand.PersistentFlags().StringVarP(&Filepath, "filepath", "f", "", "path to thef file to parse")
 	if err := parserCommand.Execute(); err != nil {
