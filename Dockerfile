@@ -1,7 +1,6 @@
-FROM golang:alpine
+FROM alpine
 
 WORKDIR /ProductParser
 
-COPY . .
-
-RUN go build -o main cmd/main.go && ./main
+COPY gopars /usr/bin/ 
+COPY files .
