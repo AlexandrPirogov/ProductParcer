@@ -44,6 +44,7 @@ type ParserComparable[T comparator.Comparable[T]] struct {
 	file   *picker.File
 }
 
+// GetProduct scan files and prints product with best price and rating
 func (p *ParserComparable[T]) GetProduct() {
 
 	count := 0
@@ -74,6 +75,7 @@ func (p *ParserComparable[T]) GetProduct() {
 
 }
 
+// New creates instance of ParserComparable
 func New[T comparator.Comparable[T]](filepath string) ParserComparable[T] {
 	file := picker.Open(filepath)
 	p := parser.New[T](file.Ext)
