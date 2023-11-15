@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"product-parser/comparator"
+	"product-parser/flags"
 	"product-parser/parser"
 	"product-parser/picker"
 )
@@ -84,7 +85,8 @@ func New[T comparator.Comparable[T]](filepath string) ParserComparable[T] {
 }
 
 func main() {
-	pc := New[Product]("./big.csv")
+	flags.ReadConfig()
+	pc := New[Product](flags.Filepath)
 	fmt.Println("Started parsing file...")
 	pc.GetProduct()
 }
